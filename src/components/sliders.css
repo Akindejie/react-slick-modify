@@ -1,3 +1,8 @@
+.classicSlider {
+    justify-content: center;
+    margin-top: 40px;
+}
+
 .slick-slider {
     position: relative;
     height: 100%;

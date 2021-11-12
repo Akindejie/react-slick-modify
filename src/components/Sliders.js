@@ -58,16 +58,23 @@ const Sliders = () => {
   };
 
   return (
-    <Slider {...settings}>
-      {sliderData.map((slide, index) => {
-        return (
-          <div key={index}>
-            <img src={slide.image} alt="slider" key={index} className="image" />
-            <span>{slide.name}</span>
-          </div>
-        );
-      })}
-    </Slider>
+    <div className="classicSlider">
+      <Slider {...settings}>
+        {sliderData.map((slide, index) => {
+          return (
+            <div key={index}>
+              <img
+                src={slide.image}
+                alt="slider"
+                key={index}
+                className="image"
+              />
+              <span>{slide.name}</span>
+            </div>
+          );
+        })}
+      </Slider>
+    </div>
   );
 };
 
