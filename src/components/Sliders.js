@@ -13,7 +13,7 @@ const Sliders = () => {
   }
 
   const GalleryPrevArrow = ({ currentSlide, slideCount, ...props }) => {
-    const { className, onClick } = props;
+    const { onClick } = props;
 
     return (
       <div {...props} className="custom-prevArrow" onClick={onClick}>
@@ -29,7 +29,7 @@ const Sliders = () => {
     );
   };
   const GalleryNextArrow = ({ currentSlide, slideCount, ...props }) => {
-    const { className, onClick } = props;
+    const { onClick } = props;
 
     return (
       <div {...props} className="custom-nextArrow" onClick={onClick}>
@@ -46,12 +46,12 @@ const Sliders = () => {
   };
 
   const settings = {
-    className: 'center',
     centerMode: true,
     focusOnSelect: true,
     infinite: true,
     centerPadding: '100px',
     slidesToShow: 3,
+    autoplay: true,
     speed: 500,
     nextArrow: <GalleryNextArrow />,
     prevArrow: <GalleryPrevArrow />,
@@ -60,19 +60,12 @@ const Sliders = () => {
   return (
     <div className="classicSlider">
       <Slider {...settings}>
-        {sliderData.map((slide, index) => {
-          return (
-            <div key={index}>
-              <img
-                src={slide.image}
-                alt="slider"
-                key={index}
-                className="image"
-              />
-              <span>{slide.name}</span>
-            </div>
-          );
-        })}
+        {sliderData.map((slide, index) => (
+          <div key={index}>
+            <img src={slide.image} alt="slider" key={index} className="image" />
+            <span>{slide.name}</span>
+          </div>
+        ))}
       </Slider>
     </div>
   );
